@@ -8,7 +8,7 @@
  - 介绍了MA-CBA 框架，可以用在其他的MAPF求解方法上。本文用在了CBS上
 
 ## Introduction
- 
+
  - 单机planning一般都是用A*
 
  - MAPF: consists of a graph and a number of agent. a unique start state and a unique goal state are given
@@ -31,7 +31,7 @@
   - Actions: Between successive time points, each agent can perform a move action to a neighboring vertex or a wait action to stay idle at its current vertex.
   - MAPF constraints: vetex at most one agent at a given time, one agent to traverse the same edge
   - MAPF task: a set of non-conflicting paths, one for each agent, where a path for agent a i is a
-  sequence of { move , wait } actions, from start_i to goal_i
+    sequence of { move , wait } actions, from start_i to goal_i
   - Cost function: 误差函数
    - minimizing a global cumulative cost function
    - We describe the algorithms in this paper in the context of a common cost function that we call the sum-of-costs [12,45,42,38,39].
@@ -59,15 +59,15 @@
   - number of agents is large
   - Search-based suboptimal solvers
    - Hierarchical Cooperative A* (HCA start) [43]
-   	- When searching for a path for a later agent, paths chosen by previous agents are blocked.
+      	- When searching for a path for a later agent, paths chosen by previous agents are blocked.
    - Windowed-HCA* (WHCA start) [43]
-    - only performs cooperative pathfinding within a limited window, after which other agents are ignored
+        - only performs cooperative pathfinding within a limited window, after which other agents are ignored
    - 仅在有限的窗口内执行协作寻路，之外的将被忽略。
    - A perfect single-agent heuristic is most often used to guide this search. limited memory, heuristic calculated at runtime
    - [48] reduce heuristics
    - WHCA* was enhanced [4]
    - drawbacks: too many agents exist, deadlocks may occur，HCA* is not guaranteed to be complete；
-   HCA* does not　provide any guarantees on the quality of its solution；Finally,HCA* may even slow the search significantly. 
+      HCA* does not　provide any guarantees on the quality of its solution；Finally,HCA* may even slow the search significantly. 
    - 由于各个代理独立地寻找最小长度的解决方案，因此当有大量可用空间时，代理可能会发生不必要的冲突，从而产生大量的计算成本来解决
  - Rule-based suboptimal solvers
   - 基于规则的求解器倾向于以低计算成本实现完整性而不是解决方案质量 
@@ -257,12 +257,6 @@ conflicts between a i and a j recorded during the search exceeds a parameter B.
 - middle: a few open spaces and a few bottlenecks
 - bottom: almost no open spaces and many bottlenecks
 
-
-
-# SIC heuristic?
-
-
-# 
 
 
 
